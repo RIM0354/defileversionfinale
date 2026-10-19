@@ -83,4 +83,4 @@ js/debug.js        dessin des rayons et vecteurs
 js/ui.js main.js   interface, simulation à pas fixe, générations
 js/world.js rig.js audio.js   décor 3D, modèle de mannequin, musique
 ```
-Ce que je n'ai pas pu vérifier : la fluidité sur une vraie carte graphique et le rendu sonore (testés sans GPU ni haut-parleurs).
+
