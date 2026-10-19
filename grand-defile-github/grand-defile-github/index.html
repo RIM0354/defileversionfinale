@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le Grand Défilé — Steering Behaviors</title>
+<link rel="stylesheet" href="style.css">
+<script type="importmap">{ "imports": { "three": "./libs/three.module.js", "three/addons/": "./libs/addons/" } }</script>
+</head>
+<body>
+<canvas id="scene"></canvas>
+
+<section id="hud" class="glass">
+  <h1>Le Grand Défilé</h1>
+  <div class="sub">Steering behaviors · évolution des paramètres par algorithme génétique</div>
+  <div class="mode-tag" id="h-mode">ÉVOLUTION</div>
+  <div class="stats">
+    <div class="stat"><small>Génération</small><span id="h-gen">1</span></div>
+    <div class="stat"><small>Temps</small><span id="h-time">0:00</span></div>
+    <div class="stat"><small>Record</small><span id="h-rec">—</span></div>
+    <div class="stat"><small>Moyenne</small><span id="h-mean">—</span></div>
+  </div>
+  <div class="meta"><span id="h-active">0/10 sur le podium</span><span id="h-focus"></span></div>
+  <canvas id="chart" width="620" height="170"></canvas>
+  <div class="legend"><span><i style="background:#ffd36e"></i>record</span><span><i style="background:#ff6fb5"></i>meilleure de la génération</span><span><i style="background:#7fd6ff"></i>moyenne</span></div>
+  <div class="tip">Fitness = mesures de steering (vitesse, précision d’arrêt, axe, collisions). Clique une mannequin pour la suivre en mode debug.</div>
+</section>
+
+<aside id="panel" class="glass">
+  <h2>Steering behaviors</h2>
+  <div id="sliders"></div>
+</aside>
+
+<nav id="bar" class="glass">
+  <button data-view="0" class="on" title="touche 1">Salle</button>
+  <button data-view="1" title="touche 2">Aérienne</button>
+  <button data-view="2" title="touche 3">Dessus</button>
+  <button data-view="3" title="touche 4">★ Suivi</button>
+  <span class="sep"></span>
+  <button data-speed="1">×1</button><button data-speed="2" class="on">×2</button><button data-speed="4">×4</button>
+  <span class="sep"></span>
+  <button id="btn-pause">❚❚ Pause</button>
+  <button id="btn-mute" title="M">🔊</button>
+  <button id="btn-fx" title="Bloom">✨ FX</button>
+  <button id="btn-train" title="Enchaîne 10 générations rapidement">⏩ 10 générations</button>
+  <button id="btn-reset" title="Repartir d'une population aléatoire">↺ Recommencer</button>
+  <button id="btn-panel" title="P">⚙ Paramètres</button>
+  <button id="btn-hud" title="H">HUD</button>
+</nav>
+<div id="training"></div>
+<button id="btn-next" class="hidden-btn" aria-hidden="true"></button>
+<section id="stats" class="glass"></section>
+
+<section id="intro">
+  <h1>Le Grand Défilé</h1>
+  <p>Dix mannequins autonomes défilent sur un podium en T. Elles suivent un chemin, évitent vases, projecteurs et photographes, fuient les flashs et s’arrêtent sur trois marques pour poser. Leurs paramètres de steering évoluent de génération en génération (algorithme génétique). Coche les cases « voir » du panneau pour afficher ce que calcule chaque comportement.</p>
+  <button class="go" id="go">Commencer ⏎</button>
+  <div class="keys">Souris : orbite et zoom · 1-4 : vues · Espace : pause · à la fin d’un défilé, <b>ENTRÉE</b> lance la génération suivante</div>
+</section>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

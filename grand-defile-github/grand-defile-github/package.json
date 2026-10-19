@@ -1,0 +1,8 @@
+{
+  "name": "grand-defile",
+  "version": "2.0.0",
+  "description": "Le Grand Défilé — steering behaviors 3D + algorithme génétique",
+  "type": "module",
+  "scripts": { "test": "node --test test/*.test.js" },
+  "devDependencies": { "three": "0.170.0" }
+}
